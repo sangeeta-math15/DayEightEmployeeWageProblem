@@ -21,18 +21,29 @@ public class EmployeeWageProblem {
 		int empCheck = (int) (Math.floor(Math.random() * 10) % 3);
 		// print random values
 		System.out.println("Random values=>" + empCheck);
-		if (empCheck == IS_Full_TIME) {
-			empHr = 8; //employee hour for Full Day
-
-		} else if (empCheck == IS_Part_Time) {
-			empHr = 4; //Employee hour for Part Time
-		} else {
-			empHr = 0;
-			System.out.println("Employee Absent");
+		//using Switch Cases we are solving the Employee Wage Problem
+		switch(empCheck)
+		{
+			case 1: 
+				empHr = 8; // Employee hour for Full Day
+				System.out.println("Full Time");
+				break;
+			case 2: 
+				empHr = 4; // Employee hour for Part Time
+				System.out.println("Part Time");
+				break;
+			case 3:
+				empHr = 0; //Employee hour for Employee Absent 
+				System.out.println("Employee Absent");
+				break;
+			default :
+				empHr=0; //Default Employee hour
+				break;
 		}
-		//calculate employee Wage
+		
+		// calculate employee Wage
 		empWage = empHr * EMP_RATE_PER_HR;
-		//print employee Wage
+		// print employee Wage
 		System.out.println("Employee Wage=>" + empWage);
 
 	}
